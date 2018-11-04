@@ -39,7 +39,25 @@ Exemple d'entrée:
  */
 
 function searchWordFilter(items, search) {
+  const maj= search.substr(0,1).toUpperCase()+	search.substr(1,search.length).toLowerCase()
+  const table=items.filter(function(num){
+    if (num.includes(search)==true || num.includes(maj)==true) 
+      return num
+    
+  })
+  
+  return table;
+
 }
 
+searchWordFilter([
+  'Mad Max: Fury Road',
+  'Interstellar',
+  'Revenge of the Nerds',
+  'Revenge of the Pink Panther',
+  'Star Wars: Episode I - The Phantom Menace',
+  'Star Wars: Episode II - Attack of the Clones',
+  'Star Wars: Episode III - Revenge of the Sith'
+],'revenge')
 // Ne pas modifier l'export
 module.exports = searchWordFilter;

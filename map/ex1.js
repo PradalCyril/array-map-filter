@@ -1,6 +1,6 @@
 /* Array.prototype.map - Exercice 1
 
-Ecrire une fonction getStringsLength qui reçoit comme un argument un tableau de chaînes.
+Ecrire une fonction getStringsLength qui reçoit comme argument un tableau de chaînes.
 En utilisant map, cette fonction doit renvoyer un tableau avec,
 pour chaque chaîne CHAINE de longueur N en entrée, la chaîne "CHAINE contains N characters"
 en sortie.
@@ -22,6 +22,11 @@ En sortie: [
  */
 
 function getStringsLength(strings) {
+  const table = strings.map(function(nom){
+    
+    return nom + " contains "+ nom.length + " characters"
+  })
+  return table;
 }
 
 // Si besoin, tu peux toujours visualiser le résultat avec console.log,
@@ -30,3 +35,5 @@ function getStringsLength(strings) {
 
 // Ne pas modifier l'export
 module.exports = getStringsLength;
+
+getStringsLength(['Chicken','Bacon','Tofu','Mayonnaise']);
